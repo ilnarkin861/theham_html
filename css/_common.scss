@@ -1,0 +1,47 @@
+body{
+	min-width: 320px;
+	color: $default_text_color;
+	background: $color_white;
+	font-family: $default_font;
+	font-size: $default_font_size;
+	font-weight: 400;
+}
+
+.container{
+	max-width: 1170px!important;
+}
+
+section{
+	.heading{
+		text-align: center;
+		text-transform: capitalize;
+		position: relative;
+
+		*{
+			color: $section_title_color;
+			font-size: $section_title_font_size;
+			font-weight: 500;
+		}
+
+		&::after{
+			content: "";
+			width: 88px;
+			height: 5px;
+			background-image: url("../img/divider.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+			position: absolute;
+			left: 50%;
+			@include prefixed(transform, translateX(-50%));
+		}
+	}
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

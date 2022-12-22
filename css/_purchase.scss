@@ -1,0 +1,77 @@
+#purchase{
+	background-image: url("../img/purchase.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+
+	.wrapper{
+		padding-top: 120px;
+		padding-bottom: 127px;
+		background: $purchase_section_overlay_color;
+
+		.title{
+			color: $primary_color;
+			text-transform: uppercase;
+
+			*{
+				font-size: $purchase_title_font_size;
+				font-weight: 700;
+			}
+		}
+
+		.text{
+			margin-top: 20px;
+			color: $purchase_text_color;
+			font-size: $purchase_text_font_size;
+		}
+
+		.button{
+			display: inline-block;
+			margin-top: 60px;
+			position: relative;
+
+			&:hover{
+				a{
+					color: $primary_color;
+					background: $color_white;
+					border-left: 1px solid $primary_color;
+					border-right: 1px solid $primary_color;
+					border-bottom: 1px solid $primary_color;
+				}
+
+				&::before{
+					background: $primary_color;
+				}
+			}
+
+			&::before{
+				content: "";
+				width: 100%;
+				height: 100%;
+				background: $color_white;
+				border-radius: 4px;
+				position: absolute;
+				top: -5px;
+				left: 0;
+				@include prefixed(transition, background-color ease-in-out $transition_duration);
+			}
+
+			a{
+				display: inline-block;
+				padding: 24px 23px 25px 27px;
+				color: $color_white;
+				background: $primary_color;
+				border-left: 1px solid transparent;
+				border-right: 1px solid transparent;
+				border-bottom: 1px solid transparent;
+				border-radius: 4px;
+				font-size: $purchase_button_font_size;
+				text-transform: uppercase;
+				line-height: 1;
+				position: relative;
+				@include prefixed(transition, all ease-in-out $transition_duration);
+			}
+		}
+	}
+}

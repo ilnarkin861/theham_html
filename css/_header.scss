@@ -1,0 +1,156 @@
+header{
+	width: 100%;
+	background: $header_bg_color;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	.wrapper{
+		position: relative;
+
+		.logo{
+			min-height: 120px;
+			padding-top: 29px;
+		}
+
+		.menu{
+			ul{
+				font-size: 0;
+				position: relative;
+				height: 100%;
+	
+				li{
+					display: inline-block;
+					height: 100%;
+					margin-right: 14px;
+					padding-top: 49px;
+					color: $header_menu_color;
+					font-size: $header_menu_font_size;
+					font-weight: 700;
+					text-transform: uppercase;
+					position: relative;
+	
+					a{
+						@include prefixed(transition, color ease-in-out $transition_duration);
+	
+						&:hover{
+							color: $primary_color;
+						}
+					}
+					
+					&.active{
+						&::after{
+							content: "";
+							width: 100%;
+							height: 2px;
+							background: $primary_color;
+							position: absolute;
+							left: 0;
+							bottom: -2px;
+						}
+	
+						a{
+							color: $primary_color;
+						}
+					}
+				}
+			}
+		}
+
+		.actions-right{
+			margin-left: 12px;
+			margin-right: 3px;
+			padding-top: 44px;
+			color: $header_actions_color!important;		
+			font-size: $header_actions_button_font_size;
+	
+			*{
+				color: inherit;
+			}
+	
+			ul{
+				li{
+					display: inline-block;
+	
+					&:not(:first-child){
+						margin-left: 15px;
+					}
+				}
+			}
+		}
+
+		.search-form{
+			width: 100%;
+			max-width: 670px;
+			height: 0;
+			background: $color_white;
+			overflow: hidden;
+			position: absolute;
+			right: 1px;
+			bottom: 0;
+			@include prefixed(transition, all ease-in-out $transition_duration);
+
+			&.visible{
+				height: 54px;
+				bottom: -54px;
+			}
+
+			form{
+				input,
+				button{
+					height: 43px;
+				}
+
+				input{
+					width: calc(100% - 10px);
+					margin-left: 4px;
+					margin-top: 5px;
+					padding-left: 12px;
+					padding-right: 100px;
+					border: none;
+
+					&::-webkit-input-placeholder{
+						color: $search_form_placholder_color;
+						font-size: $search_form_placholder_font_size;
+						font-weight: 700;
+					}
+		
+					&::-moz-placeholder{
+						color: $search_form_placholder_color;
+						font-size: $search_form_placholder_font_size;
+						font-weight: 700;
+					}
+		
+					&:-moz-placeholder{
+						color: $search_form_placholder_color;
+						font-size: $search_form_placholder_font_size;
+						font-weight: 700;
+					}
+		
+					&:-ms-input-placeholder{
+						color: $search_form_placholder_color;
+						font-size: $search_form_placholder_font_size;
+						font-weight: 700;
+					}
+		
+					&::placeholder{
+						color: $search_form_placholder_color;
+						font-size: $search_form_placholder_font_size;
+						font-weight: 700;
+					}
+				}
+
+				button{
+					width: 44px;
+					color: $color_white;
+					background: $primary_color;
+					font-size: $header_actions_button_font_size;
+					position: absolute;
+					top: 6px;
+					right: 7px;
+				}
+			}
+		}
+	}
+}

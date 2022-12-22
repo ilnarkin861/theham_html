@@ -1,0 +1,37 @@
+#options{
+	.option{
+		padding-top: 89px;
+		padding-bottom: 116px;
+		border-top-style: solid;
+		border-top-width: 7px;
+		text-align: center;
+
+		&.dark{
+			background: $options_item_bg_color;
+			border-top-color: $primary_color;
+
+			.title{
+				color: $primary_color;
+			}
+		}
+
+		&.light{
+			background: $primary_color;
+			border-top-color: $color_white;
+
+			.title{
+				color: $color_white;
+			}
+		}
+
+		.title{
+			margin-top: 40px;
+
+			*{
+				font-size: $options_item_font_size;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

@@ -1,0 +1,158 @@
+#about{
+	background-image: url("../img/about.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	.heading{
+		display: inline-block;
+
+		*{
+			color: $color_white;
+		}
+
+		&::after{
+			bottom: -34px;
+		}
+	}
+
+	.wrapper{
+		padding-top: 90px;
+		padding-bottom: 80px;
+		background: $about_section_overlay_color;
+		position: relative;
+
+		.image{
+			width: 46.9%;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			@media (min-width: 1920px){
+				width: 898px;
+			}
+
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.content{
+			margin-top: 110px;
+
+			#radio-history:checked ~ .tab-buttons ul li#button-history label,
+			#radio-biography:checked ~ .tab-buttons ul li#button-biography label,
+			#radio-skills:checked ~ .tab-buttons ul li#button-skills label{
+				color: $primary_color;
+
+				@media (min-width: 460px){
+					&::before{
+						content: "";
+						width: 100%;
+						height: 2px;
+						background: $primary_color;
+						position: absolute;
+						top: -7px;
+						left: 0;
+					}
+				}
+			}
+
+			#radio-history:checked ~ .tabs .tab-content#tab-history,
+			#radio-biography:checked ~ .tabs .tab-content#tab-biography,
+			#radio-skills:checked ~ .tabs .tab-content#tab-skills{
+				display: block;
+			}
+
+			.tab-buttons{
+				margin-bottom: 50px;
+
+				ul{
+					font-size: 0;
+
+					li{
+						margin-right: 16px;
+
+						label{
+							display: block;
+							color: $color_white;
+							font-size: $about_tab_buttons_font_size;
+							font-weight: 700;
+							text-transform: uppercase;
+							cursor: pointer;
+							position: relative;
+							@include prefixed(transition, color ease-in-out $transition_duration);
+
+							&:hover{
+								color: $primary_color;
+							}
+						}
+
+						@media (min-width: 460px){
+							display: inline-block;
+						}
+					}
+				}
+			}
+
+			.tab-content{
+				display: none;
+				color: $about_tabs_text_color;
+				line-height: 1.78;
+				animation: fadein .8s;
+
+				&.history{
+					.list{
+						margin-top: 35px;
+
+						li{
+							margin-bottom: 15px;
+							i{
+								margin-right: 15px;
+								color: $primary_color;
+								font-size: 30px;
+							}
+						}
+					}
+				}
+
+				&.skills{
+					ul{
+						li{
+							margin-bottom: 14px;
+
+							.progress-bar{
+								width: 100%;
+								height: 40px;
+								background: none;
+								border: 1px solid $color_white;
+								border-radius: 4px;
+								position: relative;
+
+								.inner{
+									height: calc(100% + 2px);
+									border-radius: inherit;
+									position: absolute;
+									left: -1.6px;
+									top: -1px;
+								}
+
+								span{
+									display: inline-block;
+									color: $color_white;
+									font-size: $about_skills_font_size;
+									font-weight: 500;
+									text-transform: uppercase;
+									position: absolute;
+									left: 15px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

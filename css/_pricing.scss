@@ -1,0 +1,125 @@
+#pricing{
+	padding-top: 92px;
+	padding-bottom: 74px;
+
+	.heading{
+		&::after{
+			bottom: -32px;
+		}
+	}
+
+	.pricing-table{
+		margin-top: 102px;
+
+		.rate{
+			height: 100%;
+			margin-bottom: 30px;
+			background: $price_table_bg_color;
+			border: 1px solid $price_table_border_color;
+			border-radius: 5px;
+			text-align: center;
+	
+			.name,
+			.price,
+			.details,
+			.button{
+				line-height: 1;
+			}
+	
+			.name{
+				min-height: 60px;
+				padding-top: 21px;
+				padding-bottom: 15px;
+				color: $color_gray;
+				font-size: $offer_name_font_size;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+	
+			.price{
+				padding: 31px 0;
+				color: $color_white;
+				background: $price_table_color;
+				font-size: $price_font_size;
+				font-weight: 700;
+	
+				.month{
+					font-size: $default_font_size;
+					font-weight: 400;
+				}
+			}
+	
+			.details{
+				height: 100%;
+				margin-top: 6px;
+				border-top: 1px solid $price_table_border_color;
+				border-bottom: 1px solid $price_table_border_color;
+				
+				ul{
+					li{
+						padding-top: 20px;
+						padding-bottom: 13px;
+						font-weight: 500;
+	
+						&:not(:last-child){
+							border-bottom: 1px solid $price_table_border_color;
+						}
+					}
+				}
+			}
+	
+			.button{
+				padding-top: 16px;
+				padding-bottom: 23px;
+	
+				a{
+					display: inline-block;
+					padding: 18px 51px;
+					color: $color_white;
+					background: $price_table_color;
+					border-radius: 3px;
+					font-weight: 700;
+					text-transform: uppercase;
+					@include prefixed(transition, background-color ease-in-out $transition_duration);
+
+					&:hover{
+						background: $primary_color;
+					}
+				}
+			}
+
+			&.special{
+				@include prefixed(box-shadow, 0 0 9px 0 rgba(199, 199, 199, 1));
+				position: relative;
+				z-index: 3;
+
+				.name{
+					color: $primary_color;
+					overflow: hidden;
+					position: relative;
+
+					.offer{
+						width: 86px;
+						padding: 6px 0;
+						color: $color_white;
+						background-color: $primary_color;
+						font-size: 13px;
+						font-weight: 400;
+						text-transform: uppercase;
+						line-height: 1;
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						@include prefixed(transform-origin, bottom right);
+						@include prefixed(transform, rotate(45deg));
+					}
+				}
+
+				.price,
+				.button a{
+					background: $primary_color;
+				}
+			}
+		}
+	}
+}

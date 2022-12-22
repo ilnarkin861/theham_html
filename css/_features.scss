@@ -1,0 +1,45 @@
+#features{
+	padding-top: 92px;
+	padding-bottom: 42px;
+
+	.heading{
+		&::after{
+			bottom: -39px;
+		}
+	}
+
+	.items-list{
+		margin-top: 105px;
+
+		.item{
+			margin-bottom: 62px;
+
+			&:hover{
+				.title{
+					*{
+						color: $primary_color;
+					}
+				}
+			}
+
+			.icon{
+				margin-right: 20px;
+			}
+	
+			.title{
+				*{
+					color: $color_gray;
+					font-size: $features_title_font_size;
+					font-weight: 700;
+					text-transform: capitalize;
+					@include prefixed(transition, color ease-in-out $transition_duration);
+				}
+			}
+	
+			.text{
+				margin-top: 10px;
+				line-height: 1.78;
+			}
+		}
+	}
+}
